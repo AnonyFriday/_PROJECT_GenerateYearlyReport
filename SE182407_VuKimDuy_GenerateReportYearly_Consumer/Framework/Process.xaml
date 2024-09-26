@@ -4,7 +4,7 @@
     <x:Property sap2010:Annotation.AnnotationText="Dictionary structure to store configuration data of the process (settings, constants and assets)." Name="in_Config" Type="InArgument(scg:Dictionary(x:String, x:Object))" />
   </x:Members>
   <sap2010:ExpressionActivityEditor.ExpressionActivityEditor>C#</sap2010:ExpressionActivityEditor.ExpressionActivityEditor>
-  <sap:VirtualizedContainerService.HintSize>895,2937</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1237,2937</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -84,7 +84,7 @@
       <AssemblyReference>System.IO.FileSystem.DriveInfo</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Prerequisites&#xD;&#xA;1. Already Login&#xD;&#xA;2. Has queue on Orchestrator&#xD;&#xA;&#xD;&#xA;Procedures&#xD;&#xA;1. Clean Up redundant CSV Reports &#xD;&#xA;2. Navigate from Dashboard to Work Item Details&#xD;&#xA;3. Get Vendor Tax Id&#xD;&#xA;4. Navigate from Work Item Details to Download Monthly Reports&#xD;&#xA;5. Download all Monthly Reports of Vendor Tax Id&#xD;&#xA;6. Merge Monthly Reports into Yearly Report&#xD;&#xA;7. Navigate from  Download Monthly Reports to Yearly Report Upload&#xD;&#xA;8. Upload Yearly Report&#xD;&#xA;9. Navigate from Yearly Report Upload to Update Work Items&#xD;&#xA;10. Update Work Items details&#xD;&#xA;11. Navigate back to Dashboard to get next Transaction Item" DisplayName="Process" sap:VirtualizedContainerService.HintSize="416,2872" sap2010:WorkflowViewState.IdRef="Sequence_2">
+  <Sequence sap2010:Annotation.AnnotationText="Prerequisites&#xA;1. Already Login&#xA;2. Has queue on Orchestrator&#xA;&#xA;Procedures&#xA;1. Clean Up redundant CSV Reports &#xA;2. Navigate from Dashboard to Work Item Details&#xA;3. Get Vendor Tax Id&#xA;4. Navigate from Work Item Details to Download Monthly Reports&#xA;5. Download all Monthly Reports of Vendor Tax Id&#xA;6. Merge Monthly Reports into Yearly Report&#xA;7. Navigate from  Download Monthly Reports to Yearly Report Upload&#xA;8. Upload Yearly Report&#xA;9. Navigate from Yearly Report Upload to Update Work Items&#xA;10. Update Work Items details&#xA;11. Navigate back to Dashboard to get next Transaction Item" DisplayName="Process" sap:VirtualizedContainerService.HintSize="416,2872" sap2010:WorkflowViewState.IdRef="Sequence_2">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="strVendorTaxId" />
       <Variable x:TypeArguments="x:String" Name="strPreviousYear">

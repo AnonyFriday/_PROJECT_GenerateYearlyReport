@@ -36,13 +36,10 @@
     {
       "Path": "Account/System1/System1_Get_VendorTaxId.xaml",
       "SortBy": 0,
-      "VariablesSectionElementsOrder": [
-        "variable1&Sequence_1"
-      ],
+      "VariablesSectionElementsOrder": [],
       "ArgumentsSectionElementsOrder": [
-        "in_BrowserDaskboard",
-        "out_VendorTaxId",
-        "in_BrowserWorkItemDetails"
+        "out_strVendorTaxId",
+        "in_strUrlBrowserWorkItemDetails"
       ],
       "ConstantsSectionElementsOrder": [],
       "AddedNamespaces": null
@@ -125,10 +122,10 @@
       "Path": "Framework/KillAllProcesses.xaml",
       "SortBy": 0,
       "VariablesSectionElementsOrder": [
-        "str_ProcessName&Sequence_2"
+        "strProcessName&Sequence_2"
       ],
       "ArgumentsSectionElementsOrder": [
-        "in_strProcessChrome"
+        "in_strProcessName"
       ],
       "ConstantsSectionElementsOrder": [],
       "AddedNamespaces": null
@@ -432,6 +429,28 @@
         "Config&Sequence_1"
       ],
       "ArgumentsSectionElementsOrder": [],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Navigations/System1_Dashboard_NavigateTo_WorkItemsDetails.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [],
+      "ArgumentsSectionElementsOrder": [
+        "in_strUrlBrowserWorkItemsDetails",
+        "in_strUrlBrowserDashboard"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Navigations/System1_WorkItemDetails_NavigateTo_MonthlyReportsDownload.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [],
+      "ArgumentsSectionElementsOrder": [
+        "in_strUrlBrowserMonthlyReportDownload",
+        "in_strUrlBrowserWorkItemDetails"
+      ],
       "ConstantsSectionElementsOrder": [],
       "AddedNamespaces": null
     }

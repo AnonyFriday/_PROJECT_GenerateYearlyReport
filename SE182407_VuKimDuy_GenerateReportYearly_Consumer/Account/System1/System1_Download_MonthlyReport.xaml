@@ -6,7 +6,7 @@
     <x:Property Name="in_strReportsRelativePath" Type="InArgument(x:String)" />
   </x:Members>
   <sap2010:ExpressionActivityEditor.ExpressionActivityEditor>C#</sap2010:ExpressionActivityEditor.ExpressionActivityEditor>
-  <sap:VirtualizedContainerService.HintSize>1385,3919</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1340,3919</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -105,7 +105,7 @@
       <AssemblyReference>UiPath.System.Activities.ViewModels</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Prerequisites&#xD;&#xA;1. Already Login&#xD;&#xA;&#xD;&#xA;Procedures&#xD;&#xA;1. Create specific folder for VendorTaxId&#xD;&#xA;2. Goes to the Download Monthly Report page&#xD;&#xA;3. Find all month value from combobox&#xD;&#xA;4. Type VendorTaxID, Choose Month, Choose Previous Year (which is 2023)&#xD;&#xA;5. Click Download&#xD;&#xA;6. If having report, Save file at the specific folder (e.g. ES182934,...) &#xD;&#xA;7. If not having report, click Ok at dialog" DisplayName="System1_Download_MonthlyReport" sap:VirtualizedContainerService.HintSize="1350,3854" sap2010:WorkflowViewState.IdRef="Sequence_5">
+  <Sequence sap2010:Annotation.AnnotationText="Prerequisites&#xA;1. Already Login&#xA;&#xA;Procedures&#xA;1. Create specific folder for VendorTaxId&#xA;2. Goes to the Download Monthly Report page&#xA;3. Find all month value from combobox&#xA;4. Type VendorTaxID, Choose Month, Choose Previous Year (which is 2023)&#xA;5. Click Download&#xA;6. If having report, Save file at the specific folder (e.g. ES182934,...) &#xA;7. If not having report, click Ok at dialog" DisplayName="System1_Download_MonthlyReport" sap:VirtualizedContainerService.HintSize="1350,3854" sap2010:WorkflowViewState.IdRef="Sequence_5">
     <Sequence.Variables>
       <Variable x:TypeArguments="scg:IEnumerable(ui:UiElement)" Name="arrMonths" />
       <Variable x:TypeArguments="x:Int32" Name="int32Index" />
@@ -383,11 +383,11 @@
                                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                   </scg:Dictionary>
                                 </sap:WorkflowViewStateService.ViewState>
-                                <uix:NClick ActivateBefore="True" ClickType="Single" DelayBefore="0.5" DisplayName="Click 'OK'" sap:VirtualizedContainerService.HintSize="388,218" sap2010:WorkflowViewState.IdRef="NClick_3" InteractionMode="Simulate" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="77d7e77f-b911-42d9-9bf8-0e5522a70a8d" Timeout="1" Version="V4">
+                                <uix:NClick ActivateBefore="True" ClickType="Single" DelayBefore="1" DisplayName="Click 'OK'" sap:VirtualizedContainerService.HintSize="388,218" sap2010:WorkflowViewState.IdRef="NClick_3" InteractionMode="HardwareEvents" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="77d7e77f-b911-42d9-9bf8-0e5522a70a8d" Timeout="1.5" Version="V4">
                                   <uix:NClick.Target>
-                                    <uix:TargetAnchorable BrowserURL="https://acme-test.uipath.com/reports/download" CVScreenId="7e69026b-50e5-4f49-8ed4-7e5cc7b7e16e" CvElementArea="1101, 193, 78, 50" CvTextArea="1130, 212, 20, 12" CvTextArgument="OK" CvType="Button" DesignTimeRectangle="1108, 199, 64, 38" DesignTimeScaleFactor="1" ElementType="Button" FuzzyMatches="10000" FuzzySelectorArgument="&lt;ctrl name='acme-test.uipath.com says' role='dialog' /&gt;&lt;ctrl name='OK' role='push button' automationid='' check:fulltext='OK' /&gt;" Guid="9787b15c-21de-4bc5-8784-c1f758c97390" ImageBase64="" InformativeScreenshot="50134ab59dda1f5b90a20fb73351531b.png" ScopeSelectorArgument="&lt;wnd app='chrome.exe' cls='Chrome_WidgetWin_1' title='ACME System 1 - Download Monthly Report - *' /&gt;" SearchSteps="FuzzySelector, CV" Version="V4" Visibility="Interactive">
+                                    <uix:TargetAnchorable BrowserURL="https://acme-test.uipath.com/reports/download" CVScreenId="7e69026b-50e5-4f49-8ed4-7e5cc7b7e16e" CvElementArea="1101, 193, 78, 50" CvTextArea="1130, 212, 20, 12" CvTextArgument="OK" CvType="Button" DesignTimeRectangle="1108, 199, 64, 38" DesignTimeScaleFactor="1" ElementType="Button" FullSelectorArgument="&lt;ctrl name='acme-test.uipath.com says' role='dialog' /&gt;&lt;ctrl name='OK' role='push button' text='OK' /&gt;" FuzzyMatches="10000" Guid="9787b15c-21de-4bc5-8784-c1f758c97390" InformativeScreenshot="50134ab59dda1f5b90a20fb73351531b.png" ScopeSelectorArgument="&lt;wnd app='chrome.exe' cls='Chrome_WidgetWin_1' title='ACME System 1 - Download Monthly Report - *' /&gt;" SearchSteps="Selector, CV" Version="V4" Visibility="Interactive">
                                       <uix:TargetAnchorable.Anchors>
-                                        <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                        <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
                                           <uix:Target CVScreenId="7e69026b-50e5-4f49-8ed4-7e5cc7b7e16e" CvTextArea="761, 115, 196, 19" CvTextArgument="acme-test.uipath.com says" CvType="Text" DesignTimeRectangle="761, 115, 196, 19" ElementType="Text" Guid="14196fc0-994b-4eaf-8cbf-ec7f3005d1d7" SearchSteps="CV" TargetType="ComputerVisionBased" />
                                         </scg:List>
                                       </uix:TargetAnchorable.Anchors>

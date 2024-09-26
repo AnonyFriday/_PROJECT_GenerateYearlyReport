@@ -7,7 +7,7 @@
     <x:Property Name="out_strYearlyFilePath" Type="OutArgument(x:String)" />
   </x:Members>
   <sap2010:ExpressionActivityEditor.ExpressionActivityEditor>C#</sap2010:ExpressionActivityEditor.ExpressionActivityEditor>
-  <sap:VirtualizedContainerService.HintSize>1251,1649</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1237,1664</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -112,7 +112,7 @@
       <AssemblyReference>System.Linq.Async</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Prerequisites&#xD;&#xA;1. CSV reports at the specific folder&#xD;&#xA;&#xD;&#xA;Procedures&#xD;&#xA;1. For each csv file in the specific folder&#xD;&#xA;2. Convert 1 csv file into monthly data table &#xD;&#xA;3. Append that data table into the yearly data table&#xD;&#xA;4. Convert the yearly data table into excel file&#xD;&#xA;5. Output the yearly file path&#xD;&#xA;&#xD;&#xA;" DisplayName="System1_Merge_Reports" sap:VirtualizedContainerService.HintSize="592,1584" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="Prerequisites&#xA;1. CSV reports at the specific folder&#xA;&#xA;Procedures&#xA;1. For each csv file in the specific folder&#xA;2. Convert 1 csv file into monthly data table &#xA;3. Append that data table into the yearly data table&#xD;&#xA;5. Set the yearly file path&#xA;4. Convert the yearly data table into excel file&#xA;&#xA;&#xA;" DisplayName="System1_Merge_Reports" sap:VirtualizedContainerService.HintSize="592,1599" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="strReportsFolderPath">
         <Variable.Default>
@@ -203,6 +203,24 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:ForEachFileX>
+    <Assign DisplayName="5. Output the yearly file path" sap:VirtualizedContainerService.HintSize="530,114" sap2010:WorkflowViewState.IdRef="Assign_2">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:String">
+          <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_3">out_strYearlyFilePath</CSharpReference>
+        </OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:String">
+          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_30">System.IO.Path.Combine(strYearlyFolderPath, $"Yearly-Report-[{in_strYear}]-[{in_strVendorTaxId}].xlsx")</CSharpValue>
+        </InArgument>
+      </Assign.Value>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </Assign>
     <ui:WriteRange StartingCell="{x:Null}" AddHeaders="True" DisplayName="4. Convert the yearly data table into excel file" sap:VirtualizedContainerService.HintSize="530,148" sap2010:WorkflowViewState.IdRef="WriteRange_2">
       <ui:WriteRange.DataTable>
         <InArgument x:TypeArguments="sd:DataTable">
@@ -222,28 +240,10 @@
       </sap:WorkflowViewStateService.ViewState>
       <ui:WriteRange.WorkbookPath>
         <InArgument x:TypeArguments="x:String">
-          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_11">out_strYearlyFilePath</CSharpValue>
+          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_35">out_strYearlyFilePath</CSharpValue>
         </InArgument>
       </ui:WriteRange.WorkbookPath>
     </ui:WriteRange>
-    <Assign DisplayName="5. Output the yearly file path" sap:VirtualizedContainerService.HintSize="530,114" sap2010:WorkflowViewState.IdRef="Assign_2">
-      <Assign.To>
-        <OutArgument x:TypeArguments="x:String">
-          <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_3">out_strYearlyFilePath</CSharpReference>
-        </OutArgument>
-      </Assign.To>
-      <Assign.Value>
-        <InArgument x:TypeArguments="x:String">
-          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_30">System.IO.Path.Combine(strYearlyFolderPath, $"Yearly-Report-[{in_strYear}]-[{in_strVendorTaxId}].xlsx")</CSharpValue>
-        </InArgument>
-      </Assign.Value>
-      <sap:WorkflowViewStateService.ViewState>
-        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-          <x:Boolean x:Key="IsPinned">False</x:Boolean>
-        </scg:Dictionary>
-      </sap:WorkflowViewStateService.ViewState>
-    </Assign>
     <ui:LogMessage DisplayName="Log End Process" sap:VirtualizedContainerService.HintSize="530,164" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Trace">
       <ui:LogMessage.Message>
         <InArgument x:TypeArguments="x:Object">
