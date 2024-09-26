@@ -4,7 +4,7 @@
     <x:Property Name="in_strUrlBrowserMonthlyReportDownload" Type="InArgument(x:String)" />
   </x:Members>
   <sap2010:ExpressionActivityEditor.ExpressionActivityEditor>C#</sap2010:ExpressionActivityEditor.ExpressionActivityEditor>
-  <sap:VirtualizedContainerService.HintSize>513,624</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1237,692</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -96,13 +96,14 @@
       <AssemblyReference>System.Linq.Expressions</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="System1_NavigateToMonthlyReport_Upload" sap:VirtualizedContainerService.HintSize="512,525" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="Prerequisites&#xD;&#xA;- None&#xD;&#xA;&#xD;&#xA;Procedures&#xD;&#xA;1. At Download Monthly Reports page&#xD;&#xA;2. Go to Yearly Report Upload page" DisplayName="System1_NavigateToMonthlyReport_Upload" sap:VirtualizedContainerService.HintSize="512,627" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Browser Chrome: ACME System 1 - Download Monthly Report" sap:VirtualizedContainerService.HintSize="450,437" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" InteractionMode="Simulate" IsIncognito="True" OpenMode="Never" ScopeGuid="96df58de-0569-4d88-afe9-0ef0c91632c4" Version="V2" WindowResize="Maximize">
+    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="1. At Download Monthly Reports page" sap:VirtualizedContainerService.HintSize="450,437" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" InteractionMode="Simulate" IsIncognito="True" OpenMode="Never" ScopeGuid="96df58de-0569-4d88-afe9-0ef0c91632c4" Version="V2" WindowResize="Maximize">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>

@@ -1,11 +1,11 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="System1_Update_WorkItems" this:System1_Update_WorkItems.in_strStatus="Completed" this:System1_Update_WorkItems.in_strComment="q23123213" this:System1_Update_WorkItems.in_strUrlBrowserWorkItemUpdate="https://acme-test.uipath.com/work-items/update/103197202" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:this="clr-namespace:" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="System1_Update_WorkItems" this:System1_Update_WorkItems.in_strStatus="Completed" this:System1_Update_WorkItems.in_strComment="q23123213" this:System1_Update_WorkItems.in_strUrlBrowserWorkItemUpdate="https://acme-test.uipath.com/work-items/update/103197202" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="in_strStatus" Type="InArgument(x:String)" />
     <x:Property Name="in_strComment" Type="InArgument(x:String)" />
     <x:Property Name="in_strUrlBrowserWorkItemUpdate" Type="InArgument(x:String)" />
   </x:Members>
   <sap2010:ExpressionActivityEditor.ExpressionActivityEditor>C#</sap2010:ExpressionActivityEditor.ExpressionActivityEditor>
-  <sap:VirtualizedContainerService.HintSize>1142,1697</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1251,2175</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -108,19 +108,27 @@
       <AssemblyReference>System.Linq.Async</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="System1_Update_WorkItems" sap:VirtualizedContainerService.HintSize="652,1632" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="Prerequisites&#xD;&#xA;1. Already Login&#xD;&#xA;2. Has queue item on the Orchestrator&#xD;&#xA;&#xD;&#xA;Procedures&#xD;&#xA;1. Go to work items update page with specific wiid&#xD;&#xA;2. Add Commens, Status, and Update Items&#xD;&#xA;3. Click &quot;Ok&quot; to confirm update successfully" DisplayName="System1_Update_WorkItems" sap:VirtualizedContainerService.HintSize="652,2110" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Browser Chrome: ACME System 1" sap:VirtualizedContainerService.HintSize="590,1544" sap2010:WorkflowViewState.IdRef="NApplicationCard_3" InteractionMode="Simulate" IsIncognito="True" OpenMode="Never" ScopeGuid="3991bd89-f59d-4aa4-8604-d63b60924b83" Version="V2" WindowResize="Maximize">
+    <ui:LogMessage DisplayName="Log Start Process" sap:VirtualizedContainerService.HintSize="590,173" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Trace">
+      <ui:LogMessage.Message>
+        <InArgument x:TypeArguments="x:Object">
+          <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_14">"[System1_Update_WorkItems] - Start Process"</CSharpValue>
+        </InArgument>
+      </ui:LogMessage.Message>
+    </ui:LogMessage>
+    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="1. Go to work items update page with specific wiid" sap:VirtualizedContainerService.HintSize="590,1553" sap2010:WorkflowViewState.IdRef="NApplicationCard_3" InteractionMode="Simulate" IsIncognito="True" OpenMode="Never" ScopeGuid="3991bd89-f59d-4aa4-8604-d63b60924b83" Version="V2" WindowResize="Maximize">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="556,1304" sap2010:WorkflowViewState.IdRef="Sequence_6">
+          <Sequence DisplayName="2. Add Commens, Status, and Update Items" sap:VirtualizedContainerService.HintSize="556,1304" sap2010:WorkflowViewState.IdRef="Sequence_6">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -199,7 +207,7 @@
             </uix:NClick>
             <uix:NCheckState DelayBefore="1" DisplayName="Check App State 'Work Item was updated a…'" EnableIfNotExists="False" sap:VirtualizedContainerService.HintSize="494,514" sap2010:WorkflowViewState.IdRef="NCheckState_1" ScopeIdentifier="3991bd89-f59d-4aa4-8604-d63b60924b83" Version="V4">
               <uix:NCheckState.IfExists>
-                <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="450,272" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                <Sequence DisplayName="3. Click &quot;Ok&quot; to confirm update successfully" sap:VirtualizedContainerService.HintSize="450,272" sap2010:WorkflowViewState.IdRef="Sequence_7">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -256,5 +264,12 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </uix:NApplicationCard>
+    <ui:LogMessage DisplayName="Log End Process" sap:VirtualizedContainerService.HintSize="590,164" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Trace">
+      <ui:LogMessage.Message>
+        <InArgument x:TypeArguments="x:Object">
+          <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_16">"[System1_Update_WorkItems] - End Process"</CSharpValue>
+        </InArgument>
+      </ui:LogMessage.Message>
+    </ui:LogMessage>
   </Sequence>
 </Activity>

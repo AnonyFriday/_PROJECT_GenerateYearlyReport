@@ -3,7 +3,7 @@
     <x:Property Name="in_strReportsRelativePath" Type="InArgument(x:String)" />
   </x:Members>
   <sap2010:ExpressionActivityEditor.ExpressionActivityEditor>C#</sap2010:ExpressionActivityEditor.ExpressionActivityEditor>
-  <sap:VirtualizedContainerService.HintSize>1385,773</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1237,1221</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -79,7 +79,7 @@
       <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Prerequisites&#xD;&#xA;1. CSV files under the reports folder&#xD;&#xA;&#xD;&#xA;Procedures&#xD;&#xA;1. Check if folder exists&#xD;&#xA;2. If folder exists, then delete folder" DisplayName="System1_CleanUp_CsvReports" sap:VirtualizedContainerService.HintSize="512,810" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="Prerequisites&#xA;1. CSV files under the reports folder&#xA;&#xA;Procedures&#xA;1. Check if folder exists&#xA;2. If folder exists, then delete folder" DisplayName="System1_CleanUp_CsvReports" sap:VirtualizedContainerService.HintSize="512,1156" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:Boolean" Default="False" Name="boIsReportsFolderExist" />
     </Sequence.Variables>
@@ -89,6 +89,13 @@
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
+    <ui:LogMessage DisplayName="Log Start Process" sap:VirtualizedContainerService.HintSize="450,173" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Trace">
+      <ui:LogMessage.Message>
+        <InArgument x:TypeArguments="x:Object">
+          <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_8">"[System1_CleanUp_CsvReports] - Start Process"</CSharpValue>
+        </InArgument>
+      </ui:LogMessage.Message>
+    </ui:LogMessage>
     <ui:FolderExistsX DisplayName="1. Check if folder exists" sap:VirtualizedContainerService.HintSize="450,165" sap2010:WorkflowViewState.IdRef="FolderExistsX_1">
       <ui:FolderExistsX.Exists>
         <OutArgument x:TypeArguments="x:Boolean">
@@ -101,7 +108,7 @@
         </InArgument>
       </ui:FolderExistsX.Path>
     </ui:FolderExistsX>
-    <If DisplayName="2. If folder exists" sap:VirtualizedContainerService.HintSize="450,455" sap2010:WorkflowViewState.IdRef="If_1">
+    <If DisplayName="2. If folder exists" sap:VirtualizedContainerService.HintSize="450,464" sap2010:WorkflowViewState.IdRef="If_1">
       <If.Condition>
         <InArgument x:TypeArguments="x:Boolean">
           <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_5">boIsReportsFolderExist</CSharpValue>
@@ -133,5 +140,12 @@
         </Sequence>
       </If.Else>
     </If>
+    <ui:LogMessage DisplayName="Log End Process" sap:VirtualizedContainerService.HintSize="450,164" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Trace">
+      <ui:LogMessage.Message>
+        <InArgument x:TypeArguments="x:Object">
+          <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_10">"[System1_CleanUp_CsvReports] - End Process"</CSharpValue>
+        </InArgument>
+      </ui:LogMessage.Message>
+    </ui:LogMessage>
   </Sequence>
 </Activity>

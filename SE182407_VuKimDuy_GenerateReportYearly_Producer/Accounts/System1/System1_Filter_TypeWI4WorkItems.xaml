@@ -6,7 +6,7 @@
     <x:Property Name="out_dtFilteredWorkItems" Type="OutArgument(sd:DataTable)" />
   </x:Members>
   <sap2010:ExpressionActivityEditor.ExpressionActivityEditor>C#</sap2010:ExpressionActivityEditor.ExpressionActivityEditor>
-  <sap:VirtualizedContainerService.HintSize>509,770</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1380,770</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -88,7 +88,7 @@
       <AssemblyReference>System.Data.SqlClient</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Prerequisites&#xA;1. Raw data table work items&#xA;&#xA;Procedures&#xA;1. Filter Type = &quot;WI4&quot; and Status = &quot;Completed&quot;" DisplayName="System1_Filter_TypeWI4WorkItems" sap:VirtualizedContainerService.HintSize="416,705" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="Prerequisites&#xA;1. Raw data table work items&#xA;&#xA;Procedures&#xA;1. Filter Type = &quot;WI4&quot; and Status = &quot;Open&quot;" DisplayName="System1_Filter_TypeWI4WorkItems" sap:VirtualizedContainerService.HintSize="416,705" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
