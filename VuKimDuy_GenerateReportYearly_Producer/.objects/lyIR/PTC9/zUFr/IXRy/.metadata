@@ -1,0 +1,14 @@
+﻿{
+  "Name": "Check App State 'Label'",
+  "Type": "Element",
+  "TaxonomyType": "Label",
+  "Id": "IXRyd1aSIUya4UpxVehJGQ",
+  "Reference": "YDEHxE-aaUCKh19z9S4VfQ/IXRyd1aSIUya4UpxVehJGQ",
+  "ParentRef": "YDEHxE-aaUCKh19z9S4VfQ/zUFrlnalbU6CPxHIRtk8ww",
+  "Created": "2024-09-19T08:38:29.1019002Z",
+  "Updated": "2024-09-19T08:38:29.1019002Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=24.11.1.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=24.11.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

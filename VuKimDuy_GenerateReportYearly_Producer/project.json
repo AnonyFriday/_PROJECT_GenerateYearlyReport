@@ -1,11 +1,11 @@
 {
-  "name": "VuKimDuy_GenerateReportYearly_Producer",
-  "projectId": "7125d38d-e166-4b4f-9b03-04ac7d4df598",
-  "description": "Blank Process",
+  "name": "SE182407_VuKimDuy_GenerateReportYearly_Producer",
+  "projectId": "ede7f6c0-936b-4070-bfcd-d2aa010a4e5e",
+  "description": "Robotic Enterprise Framework",
   "main": "Main.xaml",
   "dependencies": {
     "UiPath.Excel.Activities": "[2.24.0-preview]",
-    "UiPath.Mail.Activities": "[1.23.11]",
+    "UiPath.GSuite.Activities": "[2.7.21]",
     "UiPath.System.Activities": "[24.11.0-preview]",
     "UiPath.Testing.Activities": "[24.10.0]",
     "UiPath.UIAutomation.Activities": "[24.11.1-preview]"
@@ -43,14 +43,57 @@
     "processOptions": {
       "ignoredFiles": []
     },
-    "fileInfoCollection": [],
+    "fileInfoCollection": [
+      {
+        "editingStatus": "InProgress",
+        "testCaseId": "c5e52362-46c3-42da-959d-286505263895",
+        "testCaseType": "TestCase",
+        "executionTemplateType": "Local",
+        "fileName": "Tests\\GetTransactionDataTestCase.xaml"
+      },
+      {
+        "editingStatus": "InProgress",
+        "testCaseId": "73029f43-ae8a-417b-bc30-b0fc2207b7a3",
+        "testCaseType": "TestCase",
+        "executionTemplateType": "Local",
+        "fileName": "Tests\\InitAllApplicationsTestCase.xaml"
+      },
+      {
+        "editingStatus": "InProgress",
+        "testCaseId": "7b37771b-5666-465b-9ecb-6b0b6a445d59",
+        "testCaseType": "TestCase",
+        "executionTemplateType": "Local",
+        "fileName": "Tests\\InitAllSettingsTestCase.xaml"
+      },
+      {
+        "editingStatus": "InProgress",
+        "testCaseId": "884ec780-6e80-4e3a-9734-ba4854f39b15",
+        "testCaseType": "TestCase",
+        "executionTemplateType": "Local",
+        "fileName": "Tests\\MainTestCase.xaml"
+      },
+      {
+        "editingStatus": "InProgress",
+        "testCaseId": "7958a2d5-ab7b-4263-9600-b347d95ee609",
+        "testCaseType": "TestCase",
+        "executionTemplateType": "Local",
+        "fileName": "Tests\\ProcessTestCase.xaml"
+      },
+      {
+        "editingStatus": "InProgress",
+        "testCaseId": "cda65a47-1055-499a-a6e9-7e4ba5d7c232",
+        "testCaseType": "TestCase",
+        "executionTemplateType": "Local",
+        "fileName": "Tests\\WorkflowTestCaseTemplate.xaml"
+      }
+    ],
     "saveToCloud": false
   },
   "expressionLanguage": "CSharp",
   "entryPoints": [
     {
       "filePath": "Main.xaml",
-      "uniqueId": "95697266-cb71-40ba-9627-c0fff1f3a8c9",
+      "uniqueId": "d6ebe71a-867e-4cf2-9e2c-495e34d13135",
       "input": [],
       "output": []
     }

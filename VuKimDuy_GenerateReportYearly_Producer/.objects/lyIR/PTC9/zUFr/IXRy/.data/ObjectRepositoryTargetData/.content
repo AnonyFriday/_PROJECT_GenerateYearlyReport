@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="srxlcStoMEC35ypmg-TLmQ" Reference="YDEHxE-aaUCKh19z9S4VfQ/IXRyd1aSIUya4UpxVehJGQ" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:p="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="https://acme-test.uipath.com/work-items" CVScreenId="2bc25888-9ed2-4f9d-b5b8-c1b8efb96783" DesignTimeRectangle="1322, 620, 16, 17" DesignTimeScaleFactor="0.75" ElementType="Text" Guid="0c86235e-b397-4745-acf0-44d2b9e0da04" ScopeSelectorArgument="&lt;html app='chrome.exe' title='ACME System 1 - Work Items' /&gt;" SearchSteps="FuzzySelector" Version="V4" Visibility="Interactive">
+      <TargetAnchorable.Anchors>
+        <scg:List x:TypeArguments="ITarget" Capacity="4">
+          <Target CVScreenId="2bc25888-9ed2-4f9d-b5b8-c1b8efb96783" DesignTimeRectangle="593, 678, 750, 15" ElementType="Text" FuzzySelectorArgument="&lt;webctrl type='' tag='P' class='' aaname='Copyright © 2024 ACME Systems' check:innerText='Copyright © 2024 ACME Systems' /&gt;" Guid="cf2db924-893f-4c89-b6d2-77a9b89cd4f6" SearchSteps="FuzzySelector" />
+        </scg:List>
+      </TargetAnchorable.Anchors>
+      <TargetAnchorable.FuzzySelectorArgument>
+        <p:InArgument x:TypeArguments="x:String">
+          <p:CSharpValue x:TypeArguments="x:String">string.Format("&lt;webctrl tag='A' type='' class='page-numbers current' innertext='{0}' /&gt;", in_TransactionNumber)</p:CSharpValue>
+        </p:InArgument>
+      </TargetAnchorable.FuzzySelectorArgument>
+      <imageRef attrName="InformativeScreenshot" originalValue="1308413b9aada337d74778590ba964af.png" xmlns="">0jNy3IiB0wUOwiPIPxfck9g</imageRef>
+    </TargetAnchorable>
+    <scg:List x:TypeArguments="ObjectRepositoryVariableData" x:Key="Variables" Capacity="1">
+      <ObjectRepositoryVariableData DefaultValue="*" Name="in_TransactionNumber" />
+    </scg:List>
+    <x:String x:Key="ActivityType">None</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

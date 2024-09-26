@@ -1,12 +1,13 @@
 <Activity mc:Ignorable="sap sap2010" x:Class="System1_Merge_Reports" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:si="clr-namespace:System.IO;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
-    <x:Property Name="in_VendorTaxId" Type="InArgument(x:String)" />
-    <x:Property Name="in_Year" Type="InArgument(x:String)" />
-    <x:Property Name="in_ReportsDownloadPath" Type="InArgument(x:String)" />
-    <x:Property Name="out_YearlyReportsPath" Type="OutArgument(x:String)" />
+    <x:Property Name="in_strVendorTaxId" Type="InArgument(x:String)" />
+    <x:Property Name="in_strYear" Type="InArgument(x:String)" />
+    <x:Property Name="in_strYearlyRelativePath" Type="InArgument(x:String)" />
+    <x:Property Name="in_strReportsRelativePath" Type="InArgument(x:String)" />
+    <x:Property Name="out_strYearlyFilePath" Type="OutArgument(x:String)" />
   </x:Members>
   <sap2010:ExpressionActivityEditor.ExpressionActivityEditor>C#</sap2010:ExpressionActivityEditor.ExpressionActivityEditor>
-  <sap:VirtualizedContainerService.HintSize>1413,978</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1497,1126</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -107,23 +108,30 @@
       <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
       <AssemblyReference>UiPath.Platform</AssemblyReference>
       <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>System.Linq.Async</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="System1_Merge_Reports" sap:VirtualizedContainerService.HintSize="592,913" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="System1_Merge_Reports" sap:VirtualizedContainerService.HintSize="592,1061" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
-      <Variable x:TypeArguments="x:String" Name="str_ReportsFolderPath">
+      <Variable x:TypeArguments="x:String" Name="strReportsFolderPath">
         <Variable.Default>
-          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_22">System.IO.Path.Combine(Environment.CurrentDirectory, in_ReportsDownloadPath, in_VendorTaxId)</CSharpValue>
+          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_27">System.IO.Path.Combine(Environment.CurrentDirectory, in_strReportsRelativePath, in_strVendorTaxId)</CSharpValue>
         </Variable.Default>
       </Variable>
-      <Variable x:TypeArguments="sd:DataTable" Name="dt_YearlyReport">
+      <Variable x:TypeArguments="sd:DataTable" Name="dtbYearlyReport">
         <Variable.Default>
           <CSharpValue x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpValue`1_23">new DataTable()</CSharpValue>
         </Variable.Default>
       </Variable>
-      <Variable x:TypeArguments="sd:DataTable" Name="dt_MonthlyReport">
+      <Variable x:TypeArguments="sd:DataTable" Name="dtbMonthlyReport">
         <Variable.Default>
           <CSharpValue x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpValue`1_24">new DataTable()</CSharpValue>
+        </Variable.Default>
+      </Variable>
+      <Variable x:TypeArguments="x:String" Name="strYearlyFolderPath">
+        <Variable.Default>
+          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_29">System.IO.Path.Combine(Environment.CurrentDirectory, in_strYearlyRelativePath, in_strVendorTaxId)</CSharpValue>
         </Variable.Default>
       </Variable>
     </Sequence.Variables>
@@ -151,7 +159,7 @@
             <ui:ReadCsvFile PathResource="{x:Null}" Delimitator="Comma" DelimitatorForViewModel="Comma" DisplayName="Read CSV" sap:VirtualizedContainerService.HintSize="434,186" sap2010:WorkflowViewState.IdRef="ReadCsvFile_1">
               <ui:ReadCsvFile.DataTable>
                 <OutArgument x:TypeArguments="sd:DataTable">
-                  <CSharpReference x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpReference`1_1">dt_MonthlyReport</CSharpReference>
+                  <CSharpReference x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpReference`1_1">dtbMonthlyReport</CSharpReference>
                 </OutArgument>
               </ui:ReadCsvFile.DataTable>
               <ui:ReadCsvFile.FilePath>
@@ -163,12 +171,12 @@
             <ui:MergeDataTable DisplayName="Merge Data Table" sap:VirtualizedContainerService.HintSize="434,156" sap2010:WorkflowViewState.IdRef="MergeDataTable_2" MissingSchemaAction="Add">
               <ui:MergeDataTable.Destination>
                 <InOutArgument x:TypeArguments="sd:DataTable">
-                  <CSharpReference x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpReference`1_2">dt_YearlyReport</CSharpReference>
+                  <CSharpReference x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpReference`1_2">dtbYearlyReport</CSharpReference>
                 </InOutArgument>
               </ui:MergeDataTable.Destination>
               <ui:MergeDataTable.Source>
                 <InArgument x:TypeArguments="sd:DataTable">
-                  <CSharpValue x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpValue`1_9">dt_MonthlyReport</CSharpValue>
+                  <CSharpValue x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpValue`1_9">dtbMonthlyReport</CSharpValue>
                 </InArgument>
               </ui:MergeDataTable.Source>
             </ui:MergeDataTable>
@@ -177,7 +185,7 @@
       </ui:ForEachFileX.Body>
       <ui:ForEachFileX.Folder>
         <InArgument x:TypeArguments="x:String">
-          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_14">str_ReportsFolderPath</CSharpValue>
+          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_14">strReportsFolderPath</CSharpValue>
         </InArgument>
       </ui:ForEachFileX.Folder>
       <sap:WorkflowViewStateService.ViewState>
@@ -187,44 +195,44 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:ForEachFileX>
-    <Assign sap:VirtualizedContainerService.HintSize="530,57" sap2010:WorkflowViewState.IdRef="Assign_2">
+    <Assign sap:VirtualizedContainerService.HintSize="530,114" sap2010:WorkflowViewState.IdRef="Assign_2">
       <Assign.To>
         <OutArgument x:TypeArguments="x:String">
-          <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_3">out_YearlyReportsPath</CSharpReference>
+          <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_3">out_strYearlyFilePath</CSharpReference>
         </OutArgument>
       </Assign.To>
       <Assign.Value>
         <InArgument x:TypeArguments="x:String">
-          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_10">System.IO.Path.Combine(str_ReportsFolderPath, $"Yearly-Report-[{in_Year}]-[{in_VendorTaxId}].xlsx")</CSharpValue>
+          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_30">System.IO.Path.Combine(strYearlyFolderPath, $"Yearly-Report-[{in_strYear}]-[{in_strVendorTaxId}].xlsx")</CSharpValue>
         </InArgument>
       </Assign.Value>
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </Assign>
-    <ui:WriteRange StartingCell="{x:Null}" AddHeaders="True" DisplayName="Write Range Workbook" sap:VirtualizedContainerService.HintSize="530,48" sap2010:WorkflowViewState.IdRef="WriteRange_2">
+    <ui:WriteRange StartingCell="{x:Null}" AddHeaders="True" DisplayName="Write Range Workbook" sap:VirtualizedContainerService.HintSize="530,139" sap2010:WorkflowViewState.IdRef="WriteRange_2">
       <ui:WriteRange.DataTable>
         <InArgument x:TypeArguments="sd:DataTable">
-          <CSharpValue x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpValue`1_13">dt_YearlyReport</CSharpValue>
+          <CSharpValue x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpValue`1_13">dtbYearlyReport</CSharpValue>
         </InArgument>
       </ui:WriteRange.DataTable>
       <ui:WriteRange.SheetName>
         <InArgument x:TypeArguments="x:String">
-          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_12">in_VendorTaxId</CSharpValue>
+          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_12">in_strVendorTaxId</CSharpValue>
         </InArgument>
       </ui:WriteRange.SheetName>
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
       <ui:WriteRange.WorkbookPath>
         <InArgument x:TypeArguments="x:String">
-          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_11">out_YearlyReportsPath</CSharpValue>
+          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_11">out_strYearlyFilePath</CSharpValue>
         </InArgument>
       </ui:WriteRange.WorkbookPath>
     </ui:WriteRange>
