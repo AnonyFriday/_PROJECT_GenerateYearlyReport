@@ -453,6 +453,17 @@
       ],
       "ConstantsSectionElementsOrder": [],
       "AddedNamespaces": null
+    },
+    {
+      "Path": "Navigations/System1_MonthlyReportsDownload_NavigateTo_YearlyReportUpload.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [],
+      "ArgumentsSectionElementsOrder": [
+        "in_strUrlBrowserYearlyReportUpload",
+        "in_strUrlBrowserMonthlyReportDownload"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
     }
   ]
 }

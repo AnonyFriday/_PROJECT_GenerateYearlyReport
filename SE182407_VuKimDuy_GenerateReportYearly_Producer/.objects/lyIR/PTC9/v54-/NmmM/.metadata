@@ -1,0 +1,14 @@
+﻿{
+  "Name": "1. Check if the numeric label exists",
+  "Type": "Element",
+  "TaxonomyType": "Label",
+  "Id": "NmmMIMhQ_kGs8NZ08yJnvg",
+  "Reference": "YDEHxE-aaUCKh19z9S4VfQ/NmmMIMhQ_kGs8NZ08yJnvg",
+  "ParentRef": "YDEHxE-aaUCKh19z9S4VfQ/v54-LtNYDEOoKFbTIpDVDg",
+  "Created": "2024-09-26T18:53:20.3184313Z",
+  "Updated": "2024-09-26T18:53:20.3184313Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=24.11.1.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=24.11.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}
